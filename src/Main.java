@@ -1,9 +1,33 @@
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        Calculator num = new Calculator();
-        System.out.print("Enter your expression with *, /, +, -, ^, or %.");
-        System.out.println(num.Calculate(scan.nextLine()));
+        Scanner myScanner = new Scanner(System.in);
+        System.out.print("Enter a positive integer: ");
+        int num = myScanner.nextInt();
+
+        // write your code here to print the appropriate message(s)
+        // described below
+
+        if (num <= 0) {
+            System.out.println("That's not positive!");
+        } else {
+            if (num % 2 == 1) {
+                if (num % 5 == 0) {
+                    System.out.println("Divisible by 5!");
+                }
+                if (num % 7 == 0) {
+                    System.out.println("Divisible by 7!");
+                }
+            } else {
+                if (num > 1000) {
+                    System.out.println("Big number!");
+                } else if (num > 100 && num < 1000) {
+                    System.out.println("Medium number!");
+                } else {
+                    System.out.println("Small number!");
+                }
+            }
+        }
     }
 }
